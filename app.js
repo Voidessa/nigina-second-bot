@@ -1,7 +1,7 @@
 /* --- NIGINA INFLUENCE LANDING LOGIC --- */
 
 // Paste your Google Apps Script Web App URL here:
-const SHEET_SCRIPT_URL = "YOUR_DEPLOYED_WEB_APP_URL";
+const SHEET_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwMiMpB82LGAVQ1tRGyTPRzghNRY91g8FVYPsZkVRXTqSbfn7MBmH93sqKmkRlwqnNq/exec";
 
 // Translation Dictionary
 const translations = {
