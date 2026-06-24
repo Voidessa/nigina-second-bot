@@ -17,9 +17,8 @@ const translations = {
     "plaque.item3": "Практические задания для мгновенного внедрения",
     "plaque.item4": "Доставка материала напрямую в ваш Telegram",
     
-    "form.q1_label": "Имя и фамилия",
     "form.q2_label": "Ваш телефон (желательно 2 номера)",
-    "form.q3_label": "Ваш Instagram username (например, @nigina)",
+    "form.q3_label": "Ваш Telegram username (например, @username)",
     "form.q4_label": "Сколько вам лет, чем вы занимались до этого и какие проекты вели?",
     "form.q5_label": "Почему вы хотите получить именно этот бонусный урок от Нигины, что хотите узнать и к какому результату прийти?",
     "form.q6_label": "Проходили ли вы курсы ранее и какие именно?",
@@ -43,7 +42,7 @@ const translations = {
     
     "errors.required": "Это поле обязательно для заполнения",
     "errors.phone": "Некорректный номер телефона",
-    "errors.instagram": "Введите корректный ник с @ (например, @username)",
+    "errors.telegram": "Введите корректный ник с @ (например, @username)",
     "errors.radio": "Пожалуйста, выберите один из вариантов",
     
     "loader.states": [
@@ -67,7 +66,7 @@ const translations = {
     
     "form.q1_label": "Ism va familiya",
     "form.q2_label": "Telefon raqamingiz, imkoni bo'lsalar 2 ta",
-    "form.q3_label": "Insagram username'ingiz (Misol uchun: @nigina)",
+    "form.q3_label": "Telegram username'ingiz (Misol uchun: @username)",
     "form.q4_label": "Yoshingiz nechida, shu paytgacha nima bilan shug'ullangansiz, qanday loyihalar yuritgansiz?",
     "form.q5_label": "Nima uchun aynan Nigina Muminovaning bonus darsini olmoqchisiz, undan nima o'rganmoqchisiz va qanday natijaga chiqmoqchisiz?",
     "form.q6_label": "Avval kurslarda o'qiganmisiz va ular qaysilar?",
@@ -91,7 +90,7 @@ const translations = {
     
     "errors.required": "Bu maydon to'ldirilishi shart",
     "errors.phone": "Telefon raqami noto'g'ri kiritildi",
-    "errors.instagram": "Instagram foydalanuvchi nomini @ bilan kiriting (masalan, @username)",
+    "errors.telegram": "Telegram foydalanuvchi nomini @ bilan kiriting (masalan, @username)",
     "errors.radio": "Iltimos, variantlardan birini tanlang",
     
     "loader.states": [
@@ -120,7 +119,7 @@ const preloaderText = document.getElementById("preloader-text");
 const form = document.getElementById("bonus-lead-form");
 const nameInput = document.getElementById("input-name");
 const phoneInput = document.getElementById("input-phone");
-const instagramInput = document.getElementById("input-instagram");
+const telegramInput = document.getElementById("input-telegram");
 const profileInput = document.getElementById("input-profile");
 const motivationInput = document.getElementById("input-motivation");
 const coursesInput = document.getElementById("input-courses");
@@ -166,14 +165,14 @@ function applyTranslations(lang) {
   if (lang === "uz") {
     nameInput.placeholder = "Ismingiz";
     phoneInput.placeholder = "+998 (90) 123-45-67";
-    instagramInput.placeholder = "@username";
+    telegramInput.placeholder = "@username";
     profileInput.placeholder = "Yozing...";
     motivationInput.placeholder = "Yozing...";
     coursesInput.placeholder = "Yozing...";
   } else {
     nameInput.placeholder = "Имя и фамилия";
     phoneInput.placeholder = "+998 (90) 123-45-67";
-    instagramInput.placeholder = "@username";
+    telegramInput.placeholder = "@username";
     profileInput.placeholder = "Введите текст...";
     motivationInput.placeholder = "Введите текст...";
     coursesInput.placeholder = "Введите текст...";
@@ -234,7 +233,7 @@ phoneInput.addEventListener("input", (e) => {
   }
 });
 
-instagramInput.addEventListener("blur", (e) => {
+telegramInput.addEventListener("blur", (e) => {
   let val = e.target.value.trim();
   if (val && !val.startsWith("@")) {
     e.target.value = "@" + val;
@@ -278,16 +277,16 @@ function validateForm() {
     clearError(phoneInput);
   }
 
-  // Q3: Instagram
-  const insta = instagramInput.value.trim();
-  if (!insta) {
-    showError(instagramInput, "errors.required");
+  // Q3: Telegram
+  const tg = telegramInput.value.trim();
+  if (!tg) {
+    showError(telegramInput, "errors.required");
     isValid = false;
-  } else if (insta === "@" || insta.length < 2) {
-    showError(instagramInput, "errors.instagram");
+  } else if (tg === "@" || tg.length < 2) {
+    showError(telegramInput, "errors.telegram");
     isValid = false;
   } else {
-    clearError(instagramInput);
+    clearError(telegramInput);
   }
 
   // Q4: Profile
@@ -338,7 +337,7 @@ function validateForm() {
 }
 
 // Clear errors instantly on typing/interaction
-[nameInput, phoneInput, instagramInput, profileInput, motivationInput, coursesInput].forEach(input => {
+[nameInput, phoneInput, telegramInput, profileInput, motivationInput, coursesInput].forEach(input => {
   input.addEventListener("input", () => clearError(input));
 });
 
@@ -394,7 +393,7 @@ form.addEventListener("submit", (e) => {
   const formData = {
     name: nameInput.value.trim(),
     phone: phoneInput.value.trim(),
-    instagram: instagramInput.value.trim(),
+    telegram: telegramInput.value.trim(),
     profile: profileInput.value.trim(),
     motivation: motivationInput.value.trim(),
     courses: coursesInput.value.trim(),

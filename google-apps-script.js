@@ -7,12 +7,12 @@ function doPost(e) {
     var data = JSON.parse(e.postData.contents);
     
     // Build the row layout in order:
-    // Timestamp, Name, Phone, Instagram, Age & Profile, Motivation, Previous Courses, Income, Readiness
+    // Timestamp, Name, Phone, Telegram, Age & Profile, Motivation, Previous Courses, Income, Readiness
     var row = [
       new Date(), // Date/Time of submission
       data.name || "",
       data.phone || "",
-      data.instagram || "",
+      data.telegram || data.instagram || "",
       data.profile || "",
       data.motivation || "",
       data.courses || "",
