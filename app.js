@@ -42,7 +42,7 @@ const translations = {
     
     "errors.required": "Это поле обязательно для заполнения",
     "errors.phone": "Некорректный номер телефона",
-    "errors.telegram": "Введите корректный ник с @ (например, @username)",
+    "errors.telegram": "Введите корректный ник с @ (например, @username, от 5 символов без пробелов)",
     "errors.radio": "Пожалуйста, выберите один из вариантов",
     
     "loader.states": [
@@ -90,7 +90,7 @@ const translations = {
     
     "errors.required": "Bu maydon to'ldirilishi shart",
     "errors.phone": "Telefon raqami noto'g'ri kiritildi",
-    "errors.telegram": "Telegram foydalanuvchi nomini @ bilan kiriting (masalan, @username)",
+    "errors.telegram": "Telegram foydalanuvchi nomini @ bilan kiriting (masalan, @username, kamida 5 ta belgi, bo'shliqlarsiz)",
     "errors.radio": "Iltimos, variantlardan birini tanlang",
     
     "loader.states": [
@@ -233,11 +233,20 @@ phoneInput.addEventListener("input", (e) => {
   }
 });
 
-telegramInput.addEventListener("blur", (e) => {
-  let val = e.target.value.trim();
-  if (val && !val.startsWith("@")) {
-    e.target.value = "@" + val;
+telegramInput.addEventListener("input", (e) => {
+  let val = e.target.value;
+  if (!val) return;
+  
+  // Enforce leading @
+  if (!val.startsWith("@")) {
+    val = "@" + val;
   }
+  
+  // Only allow valid telegram characters: letters, numbers, and underscores
+  const usernamePart = val.slice(1).replace(/[^a-zA-Z0-9_]/g, "");
+  
+  // Limit username part to 32 characters max
+  e.target.value = "@" + usernamePart.slice(0, 32);
 });
 
 /* --- VALIDATION --- */
@@ -279,10 +288,11 @@ function validateForm() {
 
   // Q3: Telegram
   const tg = telegramInput.value.trim();
-  if (!tg) {
+  const tgRegex = /^@[a-zA-Z0-9_]{5,32}$/;
+  if (!tg || tg === "@") {
     showError(telegramInput, "errors.required");
     isValid = false;
-  } else if (tg === "@" || tg.length < 2) {
+  } else if (!tgRegex.test(tg)) {
     showError(telegramInput, "errors.telegram");
     isValid = false;
   } else {
