@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="https://lucide.dev/icon/sparkles.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Best Practices -->
+  <title id="page-title">NIGINA INFLUENCE | Получить бонусный урок</title>
+  <meta name="description" content="Получите бесплатный бонусный урок от Нигины Муминовой и узнайте секреты актуального контента, построения личного бренда и монетизации блога в 2026 году." />
+  <meta name="keywords" content="блогинг, инфлюенс, личный бренд, reels, контент, нигина, академия, бесплатно, бонусный урок" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600;800&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="dark">
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-spinner"></div>
+      <p id="preloader-text" class="preloader-text">Подбор эстетики...</p>
+      <span class="preloader-subtitle">Influence Academy</span>
+    </div>
+  </div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="#" class="logo">
+        NIGINA <span class="accent-text">INFLUENCE</span>
+      </a>
+      
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switch-container">
+          <button id="lang-btn" class="lang-btn" aria-label="Сменить язык">
+            <span class="lang-text">RU</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          <div id="lang-dropdown" class="lang-dropdown">
+            <button class="lang-opt" data-lang="ru">Русский</button>
+            <button class="lang-opt" data-lang="uz">O'zbekcha</button>
+          </div>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Переключить тему">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-container-minimal">
+        <div class="badge" data-i18n="hero.badge">БЕСПЛАТНЫЙ БОНУСНЫЙ УРОК</div>
+        <h1 class="hero-title font-serif" data-i18n="hero.title">
+          Как сделать так, чтобы твой контент смотрели миллионы
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
+          Эксклюзивный урок от Нигины по созданию актуального контента, который привлекает лояльных клиентов и поднимает охваты в 2026 году.
+        </p>
+      </div>
+    </section>
+
+    <!-- Info Plaque Section -->
+    <section class="plaque-section">
+      <div class="plaque-card glass-card">
+        <div class="plaque-image-box">
+          <img src="/assets/nigina_venice.jpg" alt="Nigina Muminova" class="plaque-img" />
+        </div>
+        <div class="plaque-details">
+          <h3 class="plaque-title font-serif" data-i18n="plaque.title">Что внутри этого урока?</h3>
+          <ul class="plaque-list">
+            <li>
+              <span class="bullet">&bull;</span>
+              <span data-i18n="plaque.item1">Уникальные стратегии развития личного бренда</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span data-i18n="plaque.item2">Инструменты создания Reels, которые залетают на миллионы</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span data-i18n="plaque.item3">Практические задания для мгновенного внедрения</span>
+            </li>
+            <li>
+              <span class="bullet">&bull;</span>
+              <span data-i18n="plaque.item4">Доставка материала напрямую в ваш Telegram</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Questionnaire Form Section -->
+    <section id="form-section" class="form-section">
+      <div class="form-wrapper glass-card">
+        
+        <!-- Form Fields State -->
+        <div id="form-state-input" class="form-state-active">
+          <form id="bonus-lead-form" class="lead-form-expanded" novalidate>
+            
+            <!-- Q1: Name & Surname -->
+            <div class="form-group">
+              <label for="input-name" data-i18n="form.q1_label">Ism va familiya</label>
+              <input type="text" id="input-name" name="name" required placeholder="Ismingiz" />
+              <span class="error-msg" id="name-error"></span>
+            </div>
+
+            <!-- Q2: Phone number -->
+            <div class="form-group">
+              <label for="input-phone" data-i18n="form.q2_label">Telefon raqamingiz, imkoni bo'lsa 2 ta</label>
+              <input type="tel" id="input-phone" name="phone" required placeholder="+998 (90) 123-45-67" />
+              <span class="error-msg" id="phone-error"></span>
+            </div>
+
+            <!-- Q3: Instagram handle -->
+            <div class="form-group">
+              <label for="input-instagram" data-i18n="form.q3_label">Insagram username'ingiz Misol uchun: @humoyunsabirov</label>
+              <input type="text" id="input-instagram" name="instagram" required placeholder="@username" />
+              <span class="error-msg" id="instagram-error"></span>
+            </div>
+
+            <!-- Q4: Age & Profile -->
+            <div class="form-group">
+              <label for="input-profile" data-i18n="form.q4_label">Yoshingiz nechida, shu paytgacha nima bilan shug'ullangansiz, qanday loyihalar yuritgansiz?</label>
+              <textarea id="input-profile" name="profile" rows="3" required placeholder="..."></textarea>
+              <span class="error-msg" id="profile-error"></span>
+            </div>
+
+            <!-- Q5: Motivation -->
+            <div class="form-group">
+              <label for="input-motivation" data-i18n="form.q5_label">Nima uchun aynan Nigina Muminovaning bonus darsini olmoqchisiz, undan nima o'rganmoqchisiz va qanday natijaga chiqmoqchisiz?</label>
+              <textarea id="input-motivation" name="motivation" rows="3" required placeholder="..."></textarea>
+              <span class="error-msg" id="motivation-error"></span>
+            </div>
+
+            <!-- Q6: Previous Courses -->
+            <div class="form-group">
+              <label for="input-courses" data-i18n="form.q6_label">Avval kurslarda o'qiganmisiz va ular qaysilar?</label>
+              <textarea id="input-courses" name="courses" rows="3" required placeholder="..."></textarea>
+              <span class="error-msg" id="courses-error"></span>
+            </div>
+
+            <!-- Q7: Income Radio Group -->
+            <div class="form-group">
+              <label data-i18n="form.q7_label">O'rtacha oylik daromadingiz qancha (ohirgi 6 oylikdan kelib chiqib yozing) faqat rostini)</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="income" value="none" required />
+                  <span class="custom-radio"></span>
+                  <span data-i18n="form.income_opt1">Hali o'zim pul topmayman</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="income" value="100-500" />
+                  <span class="custom-radio"></span>
+                  <span>100-500$</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="income" value="500-1000" />
+                  <span class="custom-radio"></span>
+                  <span>500-1000$</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="income" value="1000-3000" />
+                  <span class="custom-radio"></span>
+                  <span>1000-3000$</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="income" value="3000-5000" />
+                  <span class="custom-radio"></span>
+                  <span>3000$-5000$</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="income" value="5000-10000" />
+                  <span class="custom-radio"></span>
+                  <span>5000$ -10,000$</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="income" value="10000plus" />
+                  <span class="custom-radio"></span>
+                  <span data-i18n="form.income_opt7">10,000$ +oyiga</span>
+                </label>
+              </div>
+              <span class="error-msg" id="income-error"></span>
+            </div>
+
+            <!-- Q8: Readiness Radio Group -->
+            <div class="form-group">
+              <label data-i18n="form.q8_label">Mentorlikda qanchalik o'qishga tayyorsiz?</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="readiness" value="ready" required />
+                  <span class="custom-radio"></span>
+                  <span data-i18n="form.readiness_opt1">Man o'qishga va boshlang'ich to'lovni kiritishga tayyorman</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="readiness" value="details" />
+                  <span class="custom-radio"></span>
+                  <span data-i18n="form.readiness_opt2">O'qimoqchiman, lekin batafsil ma'lumot kerak</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="readiness" value="notready" />
+                  <span class="custom-radio"></span>
+                  <span data-i18n="form.readiness_opt3">Hozircha tayyor emasman deb o'ylayman, ma'lumot olmoqchiman</span>
+                </label>
+              </div>
+              <span class="error-msg" id="readiness-error"></span>
+            </div>
+
+            <button type="submit" id="submit-btn" class="btn-submit">
+              <span id="btn-text" data-i18n="form.submit_btn">ПОЛУЧИТЬ ДОСТУП В TELEGRAM</span>
+              <div id="btn-loader" class="btn-spinner hidden"></div>
+            </button>
+          </form>
+        </div>
+
+        <!-- Success State -->
+        <div id="form-state-success" class="form-state-success hidden">
+          <div class="success-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+          </div>
+          <h2 class="form-title font-serif" data-i18n="form.success_title">УРА! ДОСТУП ОТКРЫТ</h2>
+          <p id="success-description" class="form-subtitle" data-i18n="form.success_desc">
+            Нигина, твой урок готов к просмотру! Нажми на кнопку ниже, чтобы перейти в Telegram.
+          </p>
+          <a href="https://t.me/nigina_influence_bot" target="_blank" class="btn-primary btn-telegram" data-i18n="form.bot_btn">
+            СМОТРЕТЬ УРОК В TELEGRAM
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-logo">NIGINA <span class="accent-text">INFLUENCE</span></div>
+      <p class="footer-mission" data-i18n="footer.mission">Создаем будущее блогинга.</p>
+      <div class="footer-bottom">
+        <span class="copyright">&copy; 2026 NIGINA INFLUENCE. <span data-i18n="footer.rights">Все права защищены.</span></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- App JS module -->
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
