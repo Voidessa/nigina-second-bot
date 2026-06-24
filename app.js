@@ -1,5 +1,8 @@
 /* --- NIGINA INFLUENCE LANDING LOGIC --- */
 
+// Paste your Google Apps Script Web App URL here:
+const SHEET_SCRIPT_URL = "YOUR_DEPLOYED_WEB_APP_URL";
+
 // Translation Dictionary
 const translations = {
   ru: {
@@ -387,6 +390,29 @@ form.addEventListener("submit", (e) => {
   submitBtn.disabled = true;
   btnText.textContent = translations[currentLang]["form.sending"];
   btnLoader.classList.remove("hidden");
+
+  const formData = {
+    name: nameInput.value.trim(),
+    phone: phoneInput.value.trim(),
+    instagram: instagramInput.value.trim(),
+    profile: profileInput.value.trim(),
+    motivation: motivationInput.value.trim(),
+    courses: coursesInput.value.trim(),
+    income: form.querySelector('input[name="income"]:checked').value,
+    readiness: form.querySelector('input[name="readiness"]:checked').value
+  };
+
+  // If the Web App URL is configured, push it to Google Sheets
+  if (SHEET_SCRIPT_URL && SHEET_SCRIPT_URL !== "YOUR_DEPLOYED_WEB_APP_URL") {
+    fetch(SHEET_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain"
+      },
+      body: JSON.stringify(formData)
+    }).catch(err => console.error("Error submitting to Google Sheets:", err));
+  }
 
   setTimeout(() => {
     formStateInput.classList.add("hidden");
