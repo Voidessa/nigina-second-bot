@@ -104,7 +104,7 @@ const translations = {
 };
 
 // Application State
-let currentLang = localStorage.getItem("lang") || "ru";
+let currentLang = localStorage.getItem("lang") || "uz";
 let currentTheme = localStorage.getItem("theme") || "dark";
 
 // DOM Elements
